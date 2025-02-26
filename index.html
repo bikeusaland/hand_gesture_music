@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hand Gesture Music Player</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="instrument-select">Select Instrument:</label>
+                <select id="instrument-select">
+                    <option value="piano">Piano</option>
+                    <option value="synth">Synth</option>
+                    <option value="marimba">Marimba</option>
+                    <option value="guitar">Guitar</option>
+                    <option value="bass">Bass</option>
+                </select>
+            </div>
+            
+            <button id="start-btn">Start Camera</button>
+            <button id="stop-btn" disabled>Stop</button>
+        </div>
+        
+        <div class="video-container">
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="output-canvas"></canvas>
+        </div>
+        
+        <div class="info-panel">
+            <h3>Instructions:</h3>
+            <p>1. Select an instrument from the dropdown</p>
+            <p>2. Click "Start Camera" to begin</p>
+            <p>3. Show your hand to the camera</p>
+            <p>4. Move your fingers to play different notes</p>
+            <div id="debug-info"></div>
+        </div>
+    </div>
+
+    <!-- Load libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tone@15.1.16/build/Tone.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/tone@14.7.77/build/Tone.min.js"></script> -->
+    
+    <!-- Load our app code -->
+    <script src="app.js"></script>
+</body>
+</html> 
